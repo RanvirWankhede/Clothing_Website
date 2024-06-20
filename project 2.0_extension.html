@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Outfit Suggestion</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url('https://th.bing.com/th/id/R.ddbfcd34f28ce752a774ba2ae575f9d9?rik=B8qtQ%2bIlyMCXvg&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fwp1866272.jpg&ehk=OgleVo2BS18MuwwupFtbBoRo%2fEvYWhiAcm1ZfqDMmDc%3d&risl=&pid=ImgRaw&r=0') center/cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0);
+            color: rgba(255, 255, 255, 0.336);
+            text-align: center;
+            padding: 1em;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0); /* Background color for the title */
+            padding: 10px; /* Add padding for better visibility */
+            border-radius: 5px; /* Add border radius for a rounded look */
+            text-shadow: 2px 2px 5px rgb(0, 0, 0); /* Add text shadow for better visibility */
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.075);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out; /* Fade in animation */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+        }
+
+        button:hover {
+            background-color: #555; /* Darker color on hover */
+            transform: scale(1.1); /* Bounce effect on hover */
+        }
+
+        h2 {
+            color: #333;
+        
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Daily Outfit Suggestion</h1>
+    </header>
+
+    <section id="authentication">
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Log In</button>
+        </form>
+    </section>
+
+    <section id="weather">
+        <h2>Today's Weather</h2>
+        <p>Temperature: 23°C</p>
+        <p>Condition: Partly Sunny</p>
+    </section>
+
+    <section id="preferences">
+        <h2>My Preferences</h2>
+        <form action="update_preferences.php" method="post">
+            <label for="color">Favorite Color:</label>
+            <input type="text" id="color" name="color">
+            
+            <label for="style">Preferred Style:</label>
+            <input type="text" id="style" name="style">
+            
+            <button type="submit">Update Preferences</button>
+        </form>
+    </section>
+
+    <section id="outfit">
+        <h2>Suggest Your Outfit</h2>
+        <form action="save_outfit.php" method="post">
+            <label for="top">Top:</label>
+            <input type="text" id="top" name="top" required>
+            
+            <label for="bottom">Bottom:</label>
+            <input type="text" id="bottom" name="bottom" required>
+            
+            <label for="shoes">Shoes:</label>
+            <input type="text" id="shoes" name="shoes" required>
+            
+            <button type="submit">Submit Suggestion</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
